@@ -1,0 +1,16 @@
+dataset:
+  name: citeseer
+device: cuda:0
+model:
+  backbone: GCN
+  hidden_dim: 256
+  num_layers: 2
+num_shot: 10
+optim:
+  epochs: 100
+  lr: 0.01
+  prompt_beta: 0.05
+  prompt_delta: 0.001
+  prompt_tau: 0.3
+  test_shot: 1
+  wd: 0.0

@@ -1,0 +1,15 @@
+dataset:
+  name: texas
+device: cuda:0
+model:
+  backbone: GCN
+  hidden_dim: 256
+  num_layers: 3
+num_shot: 10
+optim:
+  epochs: 10
+  lr: 1.0e-05
+  prompt_delta: 0.3
+  prompt_tau: 0.1
+  test_shot: 5
+  wd: 0.0001

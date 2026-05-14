@@ -1,0 +1,17 @@
+num_shot: 3
+device: 'cuda:0'
+task: 'graph'
+dataset:
+  name: 'PROTEINS'
+model:
+  backbone: 'GCN'
+  hidden_dim: 64
+  num_layers: 2
+optim:
+  lr: 0.1
+  wd: 0.0001
+  layer: 1
+  test_shot: 50
+  prompt_delta: 1.0
+  prompt_tau: 0.9
+  epochs: 500

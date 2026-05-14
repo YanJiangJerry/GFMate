@@ -1,0 +1,17 @@
+num_shot: 3
+device: 'cuda:0'
+task: 'graph'
+dataset:
+  name: 'COX2'
+model:
+  backbone: 'GCN'
+  hidden_dim: 256
+  num_layers: 2
+optim:
+  lr: 0.1
+  wd: 0.01
+  layer: 2
+  test_shot: 50
+  prompt_delta: 0.6
+  prompt_tau: 0.1
+  epochs: 500

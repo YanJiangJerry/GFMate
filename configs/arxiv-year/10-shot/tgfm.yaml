@@ -1,0 +1,19 @@
+num_shot: 10
+device: 'cuda:0'
+dataset:
+  name: 'arxiv-year'
+gfm_dim: 128
+model:
+  hidden_dim: 128
+  backbone: 'GCN'
+  num_layers: 3
+optim:
+  batch_size: 100000
+  eval_batch_size: 20000
+  lr: 0.1
+  wd: 0.0
+  test_shot: 10
+  prompt_delta: 0.0001
+  prompt_tau: 0.7
+  epochs: 10
+  layer: 0

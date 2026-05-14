@@ -1,0 +1,16 @@
+dataset:
+  name: cora
+device: cuda:0
+model:
+  backbone: GCN
+  hidden_dim: 256
+  num_layers: 2
+num_shot: 5
+optim:
+  epochs: 100
+  layer: 2
+  lr: 0.1
+  prompt_delta: 0.01
+  prompt_tau: 1.0
+  test_shot: 1
+  wd: 0.0

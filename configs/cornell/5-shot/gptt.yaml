@@ -1,0 +1,15 @@
+dataset:
+  name: cornell
+device: cuda:0
+model:
+  backbone: GCN
+  hidden_dim: 256
+  num_layers: 3
+num_shot: 5
+optim:
+  epochs: 10
+  lr: 1.0e-05
+  prompt_delta: 0.001
+  prompt_tau: 1.0
+  test_shot: 1
+  wd: 0.001

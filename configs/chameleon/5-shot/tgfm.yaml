@@ -1,0 +1,15 @@
+num_shot: 5
+device: 'cuda:0'
+dataset:
+  name: 'chameleon'
+model:
+  hidden_dim: 256
+  backbone: 'GCN'
+  num_layers: 3
+optim:
+  lr: 0.00001
+  wd: 0.001
+  test_shot: 1
+  prompt_delta: 0.2
+  prompt_tau: 0.4
+  epochs: 20

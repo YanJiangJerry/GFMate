@@ -1,0 +1,15 @@
+num_shot: 10
+device: 'cuda:0'
+dataset:
+  name: 'photo'
+model:
+  backbone: 'GCN'
+  hidden_dim: 256
+  num_layers: 2
+optim:
+  lr: 0.1
+  wd: 0.001
+  test_shot: 1
+  prompt_delta: 0.01
+  prompt_tau: 0.2
+  epochs: 500

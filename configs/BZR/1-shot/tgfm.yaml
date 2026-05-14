@@ -1,0 +1,22 @@
+num_shot: 1
+gfm_dim: 100
+device: 'cuda:0'
+task: 'graph'
+dataset:
+  name: 'BZR'
+model:
+  backbone: 'GCN'
+  hidden_dim: 128
+  num_layers: 4
+  dropout: 0.7
+optim:
+  lr: 0.1
+  wd: 0.0001
+  layer: 1
+  test_shot: 100
+  prompt_delta: 0.5
+  prompt_tau: 0.6
+  epochs: 500
+  pre_train_epochs: 50
+  pre_train_lr: 0.001
+  pre_train_wd: 0.0001

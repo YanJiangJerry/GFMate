@@ -1,0 +1,18 @@
+dataset:
+  name: arxiv-year
+device: cuda:0
+gfm_dim: 128
+model:
+  backbone: GCN
+  hidden_dim: 128
+  num_layers: 3
+num_shot: 10
+optim:
+  batch_size: 100000
+  epochs: 50
+  eval_batch_size: 20000
+  lr: 0.01
+  prompt_delta: 0.0001
+  prompt_tau: 0.9
+  test_shot: 50
+  wd: 0.0

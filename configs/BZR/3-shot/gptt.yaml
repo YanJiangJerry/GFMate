@@ -1,0 +1,17 @@
+dataset:
+  name: BZR
+device: cuda:0
+model:
+  backbone: GCN
+  hidden_dim: 64
+  num_layers: 4
+num_shot: 3
+optim:
+  epochs: 10
+  layer: 2
+  lr: 0.1
+  prompt_delta: 0.7
+  prompt_tau: 0.6
+  test_shot: 50
+  wd: 0.001
+task: graph

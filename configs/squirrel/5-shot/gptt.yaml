@@ -1,0 +1,16 @@
+dataset:
+  name: squirrel
+device: cuda:0
+model:
+  backbone: GCN
+  hidden_dim: 256
+  num_layers: 3
+num_shot: 5
+optim:
+  epochs: 100
+  lr: 0.1
+  prompt_beta: 0.3
+  prompt_delta: 0.001
+  prompt_tau: 1.0
+  test_shot: 1
+  wd: 0.001

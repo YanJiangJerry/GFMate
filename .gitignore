@@ -1,0 +1,7 @@
+__pycache__
+.vscode/
+*.ipynb
+data/
+datasets/
+ckpts/
+wandb/
