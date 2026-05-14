@@ -1,6 +1,8 @@
 # GFMate
 
-**GFMate: Empowering Graph Foundation Models with Pre-training-agnostic Test-time Prompt Tuning** implementation and experiment scripts.
+Official repository for **GFMate: Empowering Graph Foundation Models with Pre-training-agnostic Test-time Prompt Tuning**.
+
+GFMate is a pre-training-agnostic test-time graph prompt tuning framework that applies centroid and layer prompts after GFM pre-training and exploits both labelled and unlabelled target-domain data for effective GFM test-time adaptation.
 
 ## Environment
 
@@ -23,12 +25,12 @@ unzip datasets.zip -d datasets/
 
 Layouts must match the paths and splits referenced in `configs/`.
 
-## Reproduction (`configs/`)
+## Reproduction
 
 Configuration files are organized under `configs/` by **dataset**. Each dataset occupies a dedicated subdirectory (for example, `cora/`, `texas/`, `arxiv-year/`, or graph-classification benchmarks such as `COX2/` and `cora_graph/`). Few-shot regimes are further separated into folders named `<k>-shot/` (for example, `1-shot/`, `3-shot/`). Within each such folder, one or more YAML files specify data-related options, model settings, and optimisation hyperparameters. To reproduce, run `pretrain.py` and `downstream.py` with the YAML you intend to use, or invoke the sweep drivers listed below.
 
 
-## Scripts (for experiment driver)
+## Scripts
 
 | Script | Role |
 |--------|------|
@@ -48,7 +50,7 @@ python downstream.py --cfg configs/<dataset>/<N>-shot/tgfm.yaml   # or .../gptt.
 
 Edit the `*.sh` files to set `datasets=(...)`, `shots=(...)`, `gnns=(...)`, etc., before submitting or running locally.
 
-### `tgfm.yaml` and `gptt.yaml`
+## Instructions for `tgfm.yaml` and `gptt.yaml`
 
 These two basenames are a fixed convention in our repository. Both use the same configuration schema and are loaded with `cfg.merge_from_file`—`downstream.py` does not branch on the filename, only the YAML contents matter. The practical difference is how the sweep scripts use them:
 
@@ -59,7 +61,7 @@ These two basenames are a fixed convention in our repository. Both use the same 
 
 For **manual** runs you may pass either file to `--cfg`. The two YAMLs in the same `<k>-shot/` folder **may differ on purpose** (for example different `optim.epochs`). **Please treat `tgfm.yaml` as the stable reference and `gptt.yaml` as the file sweeps overwrite for hyperparameter tuning.**
 
-## Wandb and sweeps
+## Wandb and Sweeps
 
 - **`run_sweep.py`**, **`run_sweep_base.py`**, **`run_sweep_graph.py`**, and **`run_sweep_pretrain.py`** each define **W&B Sweeps** (`wandb.sweep` / `wandb.agent`) so hyperparameters can be explored systematically; install/log in with the `wandb` CLI as usual. Sweep fields are read from `wandb.config` and written into the YAML used for each trial.
 - **`downstream.py`** logs to W&B when the loaded config has **`wandb: true`** (default in code is off; set it in the YAML for single runs or for scripts like `run_all_seed.sh` if you want online metrics).
@@ -72,9 +74,9 @@ The conda environment pins `wandb` (see `environment.yml`). Run directory `wandb
 If you use this repository or the GFMate method in research, please cite our paper:
 
 ```bibtex
-
+Coming soom
 ```
 
 ## Acknowledgements
 
-We thank the authors of **all related work**, including graph foundation models, graph prompting, semi-supervised and few-shot learning on graphs, and the open-source stacks this code builds on for their awesome work and released artifacts, which made this project possible.
+We thank the authors of all the related baselines, including GPPT, All-In-One, ProNoG, DAGPrompt, GraphPrompt, GPF, GCOPE, MDGFM, MDGPT, SAMGPT, BRIDGE and RiemannGFM, for their awesome work, which made this project possible.
