@@ -71,10 +71,15 @@ The conda environment pins `wandb` (see `environment.yml`). Run directory `wandb
 
 ## Citation
 
-If you use this repository or the GFMate method in research, please cite our paper:
+Please cite our paper:
 
 ```bibtex
-Coming soom
+@article{jiang2026gfmate,
+  title={GFMate: Empowering Graph Foundation Models with Test-time Prompt Tuning},
+  author={Jiang, Yan and Qiu, Ruihong and Huang, Zi},
+  journal={arXiv preprint arXiv:2605.14809},
+  year={2026}
+}
 ```
 
 ## Acknowledgements
